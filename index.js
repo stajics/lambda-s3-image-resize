@@ -7,7 +7,7 @@ var s3 = new AWS.S3();
 var CONFIG = require("./config.json");
 
 function getImageType(objectContentType) {
-	if (objectContentType === "image/jpeg") {
+	if ((objectContentType === "image/jpeg") || (objectContentType === "image/*")) {
 		return "jpeg";
 	} else if (objectContentType === "image/png") {
 		return "png";
@@ -59,8 +59,8 @@ exports.handler = function(event, context) {
 						cb(err);
 					} else {
 						s3.putObject({
-							"Bucket": image.record.s3.bucket.name.replace("-original", "-resized"),
-							"Key": config + "/" + image.originalKey,
+							"Bucket": image.record.s3.bucket.name,
+							"Key": "resized/" + config + "/" + image.originalKey,
 							"Body": buffer,
 							"ContentType": image.contentType
 						}, function(err) {
