@@ -1,4 +1,4 @@
 {
-	"concurrency": 5,
-	"sizes": ["50x50", "150x", "x150", "500x"]
+	"concurrency": 2,
+	"sizes": ["500x"]
 }

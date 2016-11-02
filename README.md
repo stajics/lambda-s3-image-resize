@@ -1,8 +1,10 @@
 # AWS Lambda - Image resize after upload to S3
 
 Resizes the image and puts them into the same bucket in /resized folder by default.
-Set izes in config.json
-
+Set sizes in config.json ("concurrency": sizes.length() + 1 (not sure ???)):
+  * `150x`  fixed width, height is scaled as needed
+  * `50x50` scale image best into box
+  * `x150` fixed height, width is scaled as needed
 Neccesery role permissiions:
 
 AWS CloudWatch logs permission (required for lambda):
