@@ -1,5 +1,7 @@
 # AWS Lambda - Image resize after upload to S3
 
+original: https://cloudonaut.io/serverless-image-resizing-at-any-scale/
+
 Resizes the image and puts them into the same bucket in /resized folder by default.
 Set sizes in config.json ("concurrency": sizes.length() + 1 (not sure ???)):
   * `150x`  fixed width, height is scaled as needed
